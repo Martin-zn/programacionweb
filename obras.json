@@ -1,0 +1,52 @@
+[
+    {
+      "titulo": "Obra 1",
+      "descripcion": "Descripción de la Obra 1",
+      "imagen": "/pictures/Edward Hopper, Soir Bleu, 1914.jpg"
+    },
+    {
+      "titulo": "Obra 2",
+      "descripcion": "Descripción de la Obra 2",
+      "imagen": "/pictures/Edward Hopper, Soir Bleu, 1914.jpg"
+    },
+    {
+      "titulo": "Obra 3",
+      "descripcion": "Descripción de la Obra 3",
+      "imagen": "/pictures/Edward Hopper, Soir Bleu, 1914.jpg"
+    },
+    {
+      "titulo": "Obra 4",
+      "descripcion": "Descripción de la Obra 4",
+      "imagen": "/pictures/Edward Hopper, Soir Bleu, 1914.jpg"
+    },
+    {
+      "titulo": "Obra 5",
+      "descripcion": "Descripción de la Obra 5",
+      "imagen": "/pictures/Edward Hopper, Soir Bleu, 1914.jpg"
+    },
+    {
+      "titulo": "Obra 6",
+      "descripcion": "Descripción de la Obra 6",
+      "imagen": "/pictures/Edward Hopper, Soir Bleu, 1914.jpg"
+    },
+    {
+      "titulo": "Obra 7",
+      "descripcion": "Descripción de la Obra 7",
+      "imagen": "/pictures/Edward Hopper, Soir Bleu, 1914.jpg"
+    },
+    {
+      "titulo": "Obra 8",
+      "descripcion": "Descripción de la Obra 8",
+      "imagen": "/pictures/History of the Medieval Jester.jpg"
+    },
+    {
+      "titulo": "Obra 9",
+      "descripcion": "Descripción de la Obra 9",
+      "imagen": "/pictures/History of the Medieval Jester.jpg"
+    },
+    {
+      "titulo": "Obra 10",
+      "descripcion": "Descripción de la Obra 10",
+      "imagen": "/pictures/Edward Hopper, Soir Bleu, 1914.jpg"
+    }
+  ]
