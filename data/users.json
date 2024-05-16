@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "username": "martin",
+      "email": "martin@martin.cl",
+      "password": "martin123"
+    },
+    {
+      "id": 2,
+      "username": "juanito",
+      "email": "juana@juanito.com",
+      "password": "juanito123"
+    },
+    {
+      "id": 3,
+      "username": "pedrito",
+      "email": "pedritoo@pedrito.com",
+      "password": "pedrito123"
+    },
+    {
+      "id": 4,
+      "username": "laura",
+      "email": "laura@laura.com",
+      "password": "laura123"
+    },
+    {
+      "id": 5,
+      "username": "carlos",
+      "email": "carlos@carlos.com",
+      "password": "carlos123"
+    }
+   ]

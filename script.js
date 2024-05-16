@@ -23,10 +23,16 @@ $(document).ready(function() {
         cardContainer.append(tarjeta);
       });
     }
-  
-    $.getJSON('autores.json', function(autores) {
-      crearTarjetasAutores(autores);
-    });
+
+//Obtengo los datos del local Storage
+
+$(document).ready(function(){
+  const autoresJson = localStorage.getItem('autores');
+      if(autoresJson){
+        const autores = JSON.parse(autoresJson);
+        crearTarjetasAutores(autores);
+      }
+    })
   });
 
   //Funcion para creacion de carousel...
@@ -55,8 +61,15 @@ $(document).ready(function() {
       carouselIndicators.append(carouselIndicator);
     });
   }
-
-  $.getJSON('obras.json', function(datos) {
-    renderizarCarousel(datos);
+  $(document).ready(function(){
+    const obrasJson = localStorage.getItem('obras');
+    if(obrasJson){
+      const obras = JSON.parse(obrasJson);
+      renderizarCarousel(obras);
+    }
   });
+
+  // $.getJSON('obras.json', function(datos) {
+  //   renderizarCarousel(datos);
+  // });
 
