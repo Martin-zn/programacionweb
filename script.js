@@ -199,17 +199,24 @@ $(document).ready(function() {
 
 
 // Función para validar el formulario
-function validarFormulario() {
-  // Obtener los valores de los campos del formulario
-  var nombre = document.getElementById("nombre").value;
-  var apellido = document.getElementById("apellido").value;
-  var correo = document.getElementById("correo").value;
-  var nombreUsuario = document.getElementById("nombreUsuario").value;
-  var password = document.getElementById("password").value;
-  var confirmPassword = document.getElementById("confirm_password").value;
+
+$(document).ready(function(){
+  function getUsers(){
+    const userData = localStorage.getItem('users');
+    return userData ? JSON.parse(userData) : [];
+  }
+
+  function validarFormulario(){
+
+  var nombre = $("#nombre").val();
+  var apellido = $("#apellido").val();
+  var correo = $("#correo").val();
+  var nombreUsuario = $("#nombreUsuario").val();
+  var password = $("#password").val();
+  var confirmPassword = $("#confirmPassword").val();
 
   // Expresiones regulares para validar el correo electrónico y el nombre de usuario
-  var regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var regexCorreo = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   var regexNombreUsuario = /^[a-zA-Z0-9_]+$/;
 
   // Validar nombre
@@ -235,7 +242,6 @@ function validarFormulario() {
     alert("Por favor, ingrese un nombre de usuario.");
     return false;
   }
-
   if (!regexNombreUsuario.test(nombreUsuario)) {
     alert("El nombre de usuario solo puede contener letras, números y guiones bajos.");
     return false;
@@ -258,19 +264,28 @@ function validarFormulario() {
   return true;
 }
 
-// Función para registrar un nuevo usuario
-function registrarUsuario(nombre, apellido, correo, nombreUsuario, password) {
-  // Crear un objeto con los datos del usuario
-  var userData = {
-    nombre: nombre,
-    apellido: apellido,
-    correo: correo,
-    nombreUsuario: nombreUsuario,
+function registrarUsuario(nombre, apellido, correo, nombreUsuario, password){
+  let users = getUsers();
+
+  var nuevoUsuario = {
+    name: nombre + " " + apellido,
+    email: correo,
+    username: nombreUsuario,
     password: password
   };
 
-  // Almacenar los datos del usuario en localStorage
-  localStorage.setItem('userData', JSON.stringify(userData));
+  users.push(nuevoUsuario);
+  localStorage.setItem('users', JSON.stringify(users));
+  window.location.href = 'newIndex.html';
+  }
 
-  alert("Usuario registrado exitosamente.");
-}
+  $("formRegistro").submit(function(event){
+    event.preventDefault();
+    if (validarFormulario()){
+
+    }
+  });
+});
+
+
+
