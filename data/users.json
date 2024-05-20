@@ -1,32 +1,112 @@
 [
-    {
-      "id": 1,
-      "username": "martin",
-      "email": "martin@martin.cl",
-      "password": "martin123"
-    },
-    {
-      "id": 2,
-      "username": "juanito",
-      "email": "juana@juanito.com",
-      "password": "juanito123"
-    },
-    {
-      "id": 3,
-      "username": "pedrito",
-      "email": "pedritoo@pedrito.com",
-      "password": "pedrito123"
-    },
-    {
-      "id": 4,
-      "username": "laura",
-      "email": "laura@laura.com",
-      "password": "laura123"
-    },
-    {
-      "id": 5,
-      "username": "carlos",
-      "email": "carlos@carlos.com",
-      "password": "carlos123"
-    }
-   ]
+  {
+  "id": 1,
+  "name": "Juan Pérez",
+  "username": "jperez",
+  "email": "jperez@example.com",
+  "password": "Password123",
+  "imagen": "pictures/Edward_Hopper.jpg",
+  "descripcion": "Pintor cubista español",
+  "estilo":"realismo",
+  "link":"https://i.pinimg.com/564x/90/9f/74/909f74dcc69a041d3cff106cc701998f.jpg"
+  },
+  {
+  "id": 2,
+  "name": "María García",
+  "username": "mgarcia",
+  "email": "mgarcia@example.com",
+  "password": "12345678",
+  "imagen": "pictures/Edward_Hopper.jpg",
+  "descripcion": "Pintora mexicana surrealista",
+  "estilo":"realismo",
+  "link":"https://i.pinimg.com/564x/90/9f/74/909f74dcc69a041d3cff106cc701998f.jpg"
+  },
+  {
+  "id": 3,
+  "name": "Pedro Rodríguez",
+  "username": "prodriguez",
+  "email": "prodriguez@example.com",
+  "password": "Qwerty123",
+  "imagen": "pictures/Edward_Hopper.jpg",
+  "descripcion": "Pintor surrealista español",
+  "estilo":"realismo",
+  "link":"https://i.pinimg.com/564x/90/9f/74/909f74dcc69a041d3cff106cc701998f.jpg"
+  },
+  {
+  "id": 4,
+  "name": "Ana Torres",
+  "username": "atorres",
+  "email": "atorres@example.com",
+  "password": "Password!@#",
+  "imagen": "pictures/Edward_Hopper.jpg",
+  "descripcion": "Pintor postimpresionista holandés",
+  "estilo":"realismo",
+  "link":"https://i.pinimg.com/564x/90/9f/74/909f74dcc69a041d3cff106cc701998f.jpg"
+  },
+  {
+  "id": 5,
+  "name": "Carlos Ramírez",
+  "username": "cramirez",
+  "email": "cramirez@example.com",
+  "password": "Abc123456",
+  "imagen": "pictures/Edward_Hopper.jpg",
+  "descripcion": "Pintor impresionista francés",
+  "estilo":"realismo",
+  "link":"https://i.pinimg.com/564x/90/9f/74/909f74dcc69a041d3cff106cc701998f.jpg"
+  },
+  {
+  "id": 6,
+  "name": "Laura Sánchez",
+  "username": "lsanchez",
+  "email": "lsanchez@example.com",
+  "password": "Qwerty1234",
+  "imagen": "pictures/Edward_Hopper.jpg",
+  "descripcion": "Pintor barroco holandés",
+  "estilo":"abstracto",
+  "link":"https://i.pinimg.com/564x/90/9f/74/909f74dcc69a041d3cff106cc701998f.jpg"
+  },
+  {
+  "id": 7,
+  "name": "Javier Ortiz",
+  "username": "jortiz",
+  "email": "jortiz@example.com",
+  "password": "Password123!",
+  "imagen": "pictures/Edward_Hopper.jpg",
+  "descripcion": "Artista del pop art estadounidense",
+  "estilo":"realismo",
+  "link":"https://i.pinimg.com/564x/90/9f/74/909f74dcc69a041d3cff106cc701998f.jpg"
+  },
+  {
+  "id": 8,
+  "name": "Sofía Hernández",
+  "username": "shernandez",
+  "email": "shernandez@example.com",
+  "password": "Abcdefgh123",
+  "imagen": "pictures/Edward_Hopper.jpg",
+  "descripcion": "Pintor cubista español",
+  "estilo":"cubismo",
+  "link":"https://i.pinimg.com/564x/90/9f/74/909f74dcc69a041d3cff106cc701998f.jpg"
+  },
+  {
+  "id": 9,
+  "name": "Miguel Gutiérrez",
+  "username": "mgutierrez",
+  "email": "mgutierrez@example.com",
+  "password": "Qwerty@123",
+  "imagen": "pictures/Edward_Hopper.jpg",
+  "descripcion": "Pintor fauvista francés",
+  "estilo":"realismo",
+  "link":"https://i.pinimg.com/564x/90/9f/74/909f74dcc69a041d3cff106cc701998f.jpg"
+  },
+  {
+  "id": 10,
+  "name": "Lucía Martínez",
+  "username": "lmartinez",
+  "email": "lmartinez@example.com",
+  "password": "Password123$",
+  "imagen": "pictures/Edward_Hopper.jpg",
+  "descripcion": "Pintor expresionista abstracto estadounidense",
+  "estilo":"cubismo",
+  "link":"https://i.pinimg.com/564x/90/9f/74/909f74dcc69a041d3cff106cc701998f.jpg"
+  }
+  ]

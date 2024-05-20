@@ -1,5 +1,5 @@
 //Funcion para creacion de tarjetas...
-
+//En la pagina principal 
 $(document).ready(function() {
     function crearTarjetasAutores(autores) {
       const cardContainer = $('#cardContainer');
@@ -14,10 +14,11 @@ $(document).ready(function() {
         const imagen = $('<img>').addClass('card-img-top img-thumbnail').attr('src', autor.imagen).attr('alt', autor.nombre);
         enlaceImagen.append(imagen);
         const tarjetaContenido = $('<div>').addClass('card-body');
-        const titulo = $('<h5>').addClass('card-title').text(autor.nombre);
+        const titulo = $('<h5>').addClass('card-title').text(autor.name);
         const descripcion = $('<p>').addClass('card-text').text(autor.descripcion);
+        const estilo = $('<p>').addClass('card-text').text("Estilo: "+ autor.estilo);
   
-        tarjetaContenido.append(titulo, descripcion);
+        tarjetaContenido.append(titulo, descripcion,estilo);
         tarjetaBody.append(enlaceImagen, tarjetaContenido);
         tarjeta.append(tarjetaBody);
         cardContainer.append(tarjeta);
@@ -27,7 +28,7 @@ $(document).ready(function() {
 //Obtengo los datos del local Storage
 
 $(document).ready(function(){
-  const autoresJson = localStorage.getItem('autores');
+  const autoresJson = localStorage.getItem('users');
       if(autoresJson){
         const autores = JSON.parse(autoresJson);
         crearTarjetasAutores(autores);
@@ -49,8 +50,10 @@ $(document).ready(function(){
       if (index === 0) {
         carouselItem.addClass('active');
       }
+      const enlace = $('<a>').attr('href', obra.link).attr('target', '_blank');
       const imagen = $('<img>').addClass('d-block w-100 carousel-img').attr('src', obra.imagen).attr('alt', obra.titulo);
-      carouselItem.append(imagen);
+      enlace.append(imagen)
+      carouselItem.append(enlace);
       carouselItems.append(carouselItem);
   
       const carouselIndicator = $('<button>').attr('type', 'button').attr('data-bs-target', '#carouselExampleIndicators').attr('data-bs-slide-to', index);
@@ -73,3 +76,54 @@ $(document).ready(function(){
   //   renderizarCarousel(datos);
   // });
 
+  $(document).ready(function() {
+    function todosLosAutores(autores, obras) {
+      const cardContainer = $('#allCardsContainer');
+      cardContainer.empty();
+  
+      const filas = [];
+      let fila = [];
+  
+      autores.forEach(function(autor, index) {
+        const tarjeta = $('<div>').addClass('col');
+        const tarjetaBody = $('<div>').addClass('card text-center h-100');
+        const enlaceImagen = $('<a>').attr('href', autor.link).attr('target', '_blank');
+        const imagen = $('<img>').addClass('card-img-top img-thumbnail').attr('src', autor.imagen).attr('alt', autor.nombre);
+        enlaceImagen.append(imagen);
+        const tarjetaContenido = $('<div>').addClass('card-body');
+        const titulo = $('<h5>').addClass('card-title').text(autor.name);
+        const descripcion = $('<p>').addClass('card-text').text(autor.descripcion);
+        const obrasAutor = obras.filter(obra => obra.autor_id === autor.id);
+        const cantidadObras = $('<p>').addClass('card-text').text(`Cantidad de obras: ${obrasAutor.length}`);
+        const estilo = $('<p>').addClass('card-text').text("Estilo: "+ autor.estilo);
+        tarjetaContenido.append(titulo, descripcion,estilo, cantidadObras);
+        tarjetaBody.append(enlaceImagen, tarjetaContenido);
+        tarjeta.append(tarjetaBody);
+  
+        fila.push(tarjeta);
+  
+        if ((index + 1) % 3 === 0 || index === autores.length - 1) {
+          while (fila.length < 3) {
+            fila.push($('<div>').addClass('col'));
+          }
+          filas.push($('<div>').addClass('row').append(fila));
+          fila = [];
+        }
+      });
+  
+      filas.forEach(function(fila) {
+        cardContainer.append(fila);
+      });
+    }
+  
+    // Obtengo los datos del local Storage
+    $(document).ready(function() {
+      const autoresJson = localStorage.getItem('users');
+      const obrasJson = localStorage.getItem('obras');
+      if (autoresJson && obrasJson) {
+        const autores = JSON.parse(autoresJson);
+        const obras = JSON.parse(obrasJson);
+        todosLosAutores(autores, obras);
+      }
+    });
+  });

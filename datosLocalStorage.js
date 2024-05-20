@@ -12,4 +12,10 @@ $.getJSON('data/obras.json', function(obras){
     console.log("Subiendo Obras");
     const obrasJson = JSON.stringify(obras);
     localStorage.setItem('obras', obrasJson);
+});
+
+$.getJSON('data/users.json', function(users){
+    console.log("Subiendo Usuarios");
+    const userJson = JSON.stringify(users);
+    localStorage.setItem('users', userJson);
 })
