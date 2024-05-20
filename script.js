@@ -115,6 +115,11 @@ $(document).ready(function(){
         cardContainer.append(fila);
       });
     }
+
+    function filtrarAutores(autores, searchTerm){
+      const autoresFiltrados = autores.filter(autor => autor.name.toLowerCase().includes(searchTerm.toLowerCase()) || autor.estilo.toLowerCase().includes(searchTerm.toLowerCase()));
+      return autoresFiltrados;
+    }
   
     // Obtengo los datos del local Storage
     $(document).ready(function() {
@@ -124,6 +129,47 @@ $(document).ready(function(){
         const autores = JSON.parse(autoresJson);
         const obras = JSON.parse(obrasJson);
         todosLosAutores(autores, obras);
+
+        $("#searchInput").on("input", function() {
+          const searchTerm = $(this).val();
+          const autoresFiltrados = filtrarAutores(autores, searchTerm);
+          todosLosAutores(autoresFiltrados, obras);
+        });
       }
     });
   });
+
+
+
+
+  //=========================================LOGIN=========================================//
+$(document).ready(function(){
+  function getUsers(){
+    const userData = localStorage.getItem('users');
+    return userData ? JSON.parse(userData) : [];
+  }
+
+  function validateLogin(username, password){
+    const users = getUsers();
+    const user = users.find(u => u.username === username);
+
+    if (user && user.password === password){
+      localStorage.setItem('currentUser', JSON.stringify({id: user.id, name: user.name, img: user.imagen}));
+      return true;
+    } else{
+      return false;
+    }
+  }
+
+  $('#loginForm').submit(function(event){
+    event.preventDefault();
+    const username = $('#username').val();
+    const password = $('#password').val();
+
+    if(validateLogin(username, password)){
+      window.location.href = 'newIndex.html';
+    } else {
+      alert('Usuario o contraseña incorrectos')
+    }
+  });
+});
